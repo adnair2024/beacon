@@ -1,0 +1,13 @@
+[Unit]
+Description=beacon: Govee desk status light (daemon)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/beacon daemon
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

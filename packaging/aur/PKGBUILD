@@ -1,0 +1,40 @@
+# Maintainer: Ashwin Nair <adnair2024@gmail.com>
+#
+# Binary package: installs the archive GoReleaser attaches to a GitHub release.
+# Before publishing for the first time, after the v$pkgver release exists, run
+#   updpkgsums && makepkg --printsrcinfo > .SRCINFO
+# to replace the SKIP checksums (they are SKIP only because no release exists
+# yet to take a checksum from).
+pkgname=beacon-bin
+_name=beacon
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Govee lights as a desk status beacon: Claude Code status, Pomodoro and workday schedules in a terminal UI'
+arch=('x86_64' 'aarch64')
+url='https://github.com/adnair2024/beacon'
+license=('MIT')
+provides=("$_name")
+conflicts=("$_name")
+source=('beacon.service')
+source_x86_64=("$_name-$pkgver-x86_64.tar.gz::$url/releases/download/v$pkgver/${_name}_${pkgver}_linux_amd64.tar.gz")
+source_aarch64=("$_name-$pkgver-aarch64.tar.gz::$url/releases/download/v$pkgver/${_name}_${pkgver}_linux_arm64.tar.gz")
+sha256sums=('SKIP')
+sha256sums_x86_64=('SKIP')
+sha256sums_aarch64=('SKIP')
+options=('!strip' '!debug') # prebuilt, already stripped
+noextract=("$_name-$pkgver-x86_64.tar.gz" "$_name-$pkgver-aarch64.tar.gz")
+
+prepare() {
+  mkdir -p "$srcdir/dist"
+  tar -xzf "$srcdir/$_name-$pkgver-$CARCH.tar.gz" -C "$srcdir/dist"
+}
+
+package() {
+  cd "$srcdir/dist"
+  install -Dm755 beacon "$pkgdir/usr/bin/beacon"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 .env.example "$pkgdir/usr/share/doc/$pkgname/env.example"
+  # `systemctl --user enable --now beacon` (or `beacon autostart install`)
+  install -Dm644 "$srcdir/beacon.service" "$pkgdir/usr/lib/systemd/user/beacon.service"
+}

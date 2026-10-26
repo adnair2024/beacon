@@ -1,0 +1,57 @@
+# GoReleaser configuration (v2). Run by .github/workflows/release.yml on a tag;
+# `scripts/build-all.sh` produces the same artifacts without GoReleaser.
+version: 2
+project_name: beacon
+
+before:
+  hooks:
+    - go mod verify
+
+builds:
+  - id: beacon
+    main: ./cmd/beacon
+    binary: beacon
+    env:
+      - CGO_ENABLED=0 # pure Go: cross-compiles with no extra toolchains
+    goos: [linux, windows]
+    goarch: [amd64, arm64]
+    ignore:
+      - goos: windows
+        goarch: arm64
+    flags: [-trimpath]
+    ldflags:
+      - -s -w
+      - -X main.version={{ .Version }}
+      - -X main.commit={{ .FullCommit }}
+      - -X main.date={{ .Date }}
+
+archives:
+  - id: default
+    ids: [beacon]
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - README.md
+      - LICENSE
+      - .env.example
+
+checksum:
+  name_template: checksums.txt
+  algorithm: sha256
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+release:
+  draft: true # review the notes and artifacts, then publish by hand
+  github:
+    owner: adnair2024
+    name: beacon
