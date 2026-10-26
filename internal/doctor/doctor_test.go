@@ -476,7 +476,7 @@ func TestHookBinaryChecks(t *testing.T) {
 			for _, g := range groups.([]any) {
 				for _, h := range g.(map[string]any)["hooks"].([]any) {
 					m := h.(map[string]any)
-					m["command"] = strings.Replace(m["command"].(string), e.Exe, "/nonexistent/beacon", 1)
+					m["command"] = strings.Replace(m["command"].(string), filepath.ToSlash(e.Exe), "/nonexistent/beacon", 1)
 				}
 			}
 		}
@@ -490,7 +490,7 @@ func TestHookBinaryChecks(t *testing.T) {
 			for _, g := range groups.([]any) {
 				for _, h := range g.(map[string]any)["hooks"].([]any) {
 					m := h.(map[string]any)
-					m["command"] = strings.Replace(m["command"].(string), e.Exe, "beacon", 1)
+					m["command"] = strings.Replace(m["command"].(string), filepath.ToSlash(e.Exe), "beacon", 1)
 				}
 			}
 		}

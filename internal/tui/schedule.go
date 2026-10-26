@@ -2,6 +2,7 @@ package tui
 
 import (
 	"fmt"
+	"path"
 	"path/filepath"
 	"strconv"
 	"strings"
@@ -421,7 +422,7 @@ func (m *schedModel) view(th theme, w int, info schedule.Info, pal color.Palette
 	}
 	// Show the short form (schedules/workday.json); `beacon schedule path`
 	// prints the full location.
-	short := filepath.Join(filepath.Base(m.dir), m.name+".json")
+	short := path.Join(filepath.Base(m.dir), m.name+".json") // always "/": it's a hint, not a path to open
 	src := th.dim().Render(short)
 	if !m.exists {
 		src = th.dim().Render("built-in default; the first change creates " + short)
