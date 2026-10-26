@@ -72,7 +72,7 @@ func TestDoctorHealthyFakeSetup(t *testing.T) {
 	}
 	// Hooks installed and pointing at this very binary.
 	claudeDir := t.TempDir()
-	snippet, err := claude.Snippet(exe, claude.SnippetOptions{StopFailure: true})
+	snippet, err := claude.Snippet(filepath.ToSlash(exe), claude.SnippetOptions{StopFailure: true})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -107,7 +107,7 @@ func TestDoctorWarningsDoNotFail(t *testing.T) {
 	e := newEnv(t, "") // the desk has no cache -> a warning in dry-run; no engine -> a warning
 	exe, _ := os.Executable()
 	claudeDir := t.TempDir()
-	snippet, _ := claude.Snippet(exe, claude.SnippetOptions{StopFailure: true})
+	snippet, _ := claude.Snippet(filepath.ToSlash(exe), claude.SnippetOptions{StopFailure: true})
 	os.WriteFile(filepath.Join(claudeDir, "settings.json"), snippet, 0o600)
 	out, err := doctorRun(t, e, claudeDir, "dummy-key-9999", "--dry-run")
 	if err != nil {

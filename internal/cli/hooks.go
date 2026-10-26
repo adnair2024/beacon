@@ -3,6 +3,7 @@ package cli
 import (
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -44,9 +45,10 @@ the snippet on another machine.`,
 					}
 				}
 			}
-			if windows {
-				// Forward slashes work in every shell Claude Code might use on
-				// Windows; backslashes get eaten as escapes by bash.
+			// Forward slashes work in every shell Claude Code might use on
+			// Windows; backslashes get eaten as escapes by bash. os.Executable
+			// returns backslashes on native Windows, so this applies there too.
+			if windows || runtime.GOOS == "windows" {
 				bin = strings.ReplaceAll(bin, `\`, "/")
 			}
 			out, err := claude.Snippet(bin, claude.SnippetOptions{PreToolUse: pre, StopFailure: !noStopFailure})

@@ -135,7 +135,9 @@ func TestEngineLockIsSingleInstance(t *testing.T) {
 	if s.EngineRunning() {
 		t.Fatal("released lock should read as not running")
 	}
-	if _, err := s.AcquireEngine(); err != nil {
+	again, err := s.AcquireEngine()
+	if err != nil {
 		t.Fatal("slot should be reusable", err)
 	}
+	again() // release it: Windows can't delete a temp dir while the lock file is open
 }

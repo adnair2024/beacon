@@ -159,7 +159,7 @@ func TestControlRequestBodiesGolden(t *testing.T) {
 	if err != nil {
 		t.Fatalf("%v (run with -update to create)", err)
 	}
-	if string(want) != got.String() {
+	if strings.ReplaceAll(string(want), "\r\n", "\n") != got.String() { // a Windows checkout may have CRLF
 		t.Fatalf("request bodies changed:\n--- got ---\n%s\n--- want ---\n%s", got.String(), want)
 	}
 }

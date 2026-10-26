@@ -39,3 +39,7 @@ CLAUDE.md
 
 # Release build output (scripts/build-all.sh, goreleaser)
 dist/
+
+# Build output from `go build ./cmd/beacon` in the repo root
+/beacon
+/beacon.exe

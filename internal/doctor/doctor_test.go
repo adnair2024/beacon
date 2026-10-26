@@ -36,7 +36,7 @@ func healthy(t *testing.T) Env {
 	cfg.Devices = []config.Device{{Name: "desk", ID: strip.ID, SKU: strip.SKU, Backend: "cloud", Caps: &cache}}
 
 	store := state.Open(filepath.Join(dir, "state"))
-	snippet, err := claude.Snippet(exe, claude.SnippetOptions{StopFailure: true})
+	snippet, err := claude.Snippet(filepath.ToSlash(exe), claude.SnippetOptions{StopFailure: true})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -375,7 +375,7 @@ func TestOfflineDeviceGetsTheWifiHint(t *testing.T) {
 // settings builds a Claude settings file whose hooks call exe, after mutating it.
 func settings(t *testing.T, exe string, mutate func(map[string]any)) []SettingsFile {
 	t.Helper()
-	snippet, err := claude.Snippet(exe, claude.SnippetOptions{StopFailure: true})
+	snippet, err := claude.Snippet(filepath.ToSlash(exe), claude.SnippetOptions{StopFailure: true})
 	if err != nil {
 		t.Fatal(err)
 	}

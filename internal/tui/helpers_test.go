@@ -4,6 +4,7 @@ import (
 	"flag"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 
@@ -141,7 +142,7 @@ func golden(t *testing.T, name, got string) {
 	if err != nil {
 		t.Fatalf("%v (run with -update to create)", err)
 	}
-	if string(want) != got {
+	if strings.ReplaceAll(string(want), "\r\n", "\n") != got { // a Windows checkout may have CRLF
 		t.Errorf("%s differs from golden file:\n--- got ---\n%s\n--- want ---\n%s", name, got, want)
 	}
 }
