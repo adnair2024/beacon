@@ -1,0 +1,24 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  beacon · engine                                  ● desk  FAKE-STRIP  cloud  │
+│  [1 Dashboard]  2 Pomo   3 Schedule   4 Devices   5 Log   6 Colors           │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│                                                                              │
+│  idle                                                                        │
+│                                                                              │
+│  Now: nothing active · the light is left alone                               │
+│  no light state recorded yet                                                 │
+│                                                                              │
+│  Claude    no sessions                                                       │
+│  Pomo      idle                                                              │
+│  Sched.    starts Arrive (07:55)                                             │
+│  Next      Arrive at 07:55 (in 21h55m)                                       │
+│                                                                              │
+│  Driving desk from this window; quitting stops the engine but leaves the     │
+│  light as it is.                                                             │
+│                                                                              │
+│                                                                              │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  o override • c clear • ? help • q quit                                      │
+╰──────────────────────────────────────────────────────────────────────────────╯

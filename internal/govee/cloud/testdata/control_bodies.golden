@@ -1,0 +1,110 @@
+// power on
+{
+  "payload": {
+    "capability": {
+      "instance": "powerSwitch",
+      "type": "devices.capabilities.on_off",
+      "value": 1
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}
+// brightness 80
+{
+  "payload": {
+    "capability": {
+      "instance": "brightness",
+      "type": "devices.capabilities.range",
+      "value": 80
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}
+// colorRgb orange
+{
+  "payload": {
+    "capability": {
+      "instance": "colorRgb",
+      "type": "devices.capabilities.color_setting",
+      "value": 16747520
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}
+// colorTemperatureK 3000
+{
+  "payload": {
+    "capability": {
+      "instance": "colorTemperatureK",
+      "type": "devices.capabilities.color_setting",
+      "value": 3000
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}
+// segmentedColorRgb [0,1,2] orange
+{
+  "payload": {
+    "capability": {
+      "instance": "segmentedColorRgb",
+      "type": "devices.capabilities.segment_color_setting",
+      "value": {
+        "rgb": 16747520,
+        "segment": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}
+// segmentedBrightness [3,4] 30
+{
+  "payload": {
+    "capability": {
+      "instance": "segmentedColorRgb",
+      "type": "devices.capabilities.segment_color_setting",
+      "value": {
+        "rgb": 0,
+        "segment": [
+          3,
+          4
+        ]
+      }
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}
+// segmentedBrightness [3,4] 30
+{
+  "payload": {
+    "capability": {
+      "instance": "segmentedBrightness",
+      "type": "devices.capabilities.segment_color_setting",
+      "value": {
+        "brightness": 30,
+        "segment": [
+          3,
+          4
+        ]
+      }
+    },
+    "device": "XX:XX:XX:XX:XX:XX:XX:XX",
+    "sku": "H612F"
+  },
+  "requestId": "REQ"
+}

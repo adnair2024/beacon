@@ -25,9 +25,17 @@ profile.cov
 go.work
 go.work.sum
 
-# env file
+# env files: real ones hold secrets, only the example is committed
 .env
+.env.*
+!.env.example
 
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Claude Code instructions
+CLAUDE.md
+
+# Release build output (scripts/build-all.sh, goreleaser)
+dist/

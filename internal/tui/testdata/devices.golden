@@ -1,0 +1,24 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  beacon · engine                                  ● desk  FAKE-STRIP  cloud  │
+│   1 Dashboard   2 Pomo   3 Schedule  [4 Devices]  5 Log   6 Colors           │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Devices                                                                     │
+│                                                                              │
+│  ● desk  FAKE-STRIP  cloud                                                   │
+│    power brightness(1-100) rgb kelvin(2700-6500) segments×10+brightness      │
+│                                                                              │
+│  Capabilities come from the Govee API (cached in the config by `beacon       │
+│  devices refresh`).                                                          │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  o override • c clear • ? help • q quit                                      │
+╰──────────────────────────────────────────────────────────────────────────────╯

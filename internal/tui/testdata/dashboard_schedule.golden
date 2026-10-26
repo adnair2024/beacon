@@ -1,0 +1,24 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  beacon · engine                                  ● desk  FAKE-STRIP  cloud  │
+│  [1 Dashboard]  2 Pomo   3 Schedule   4 Devices   5 Log   6 Colors           │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│                                                                              │
+│  schedule                                                                    │
+│                                                                              │
+│  Now: schedule: Focus (09:30)                                                │
+│  4800K · 90%                                                                 │
+│                                                                              │
+│  Claude    no sessions                                                       │
+│  Pomo      idle                                                              │
+│  Sched.    Focus (09:30) → Lunch (11:00)                                     │
+│  Next      Lunch at 11:00 (in 1h00m)                                         │
+│                                                                              │
+│  Driving desk from this window; quitting stops the engine but leaves the     │
+│  light as it is.                                                             │
+│                                                                              │
+│                                                                              │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  o override • c clear • ? help • q quit                                      │
+╰──────────────────────────────────────────────────────────────────────────────╯

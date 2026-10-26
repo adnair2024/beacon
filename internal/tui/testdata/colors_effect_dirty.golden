@@ -1,0 +1,24 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  beacon · engine                                  ● desk  FAKE-STRIP  cloud  │
+│   1 Dashboard   2 Pomo   3 Schedule   4 Devices   5 Log  [6 Colors]          │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  Colors *                                                                    │
+│    Claude                                                                    │
+│       working          #FF8C00    pulse                                      │
+│  ▸    ready            #00C853    solid                                      │
+│       waiting          #2979FF    solid                                      │
+│       mode             override                                              │
+│       split segments   2                                                     │
+│       brightness       100                                                   │
+│    Pomodoro                                                                  │
+│       focus            #FF4FA3    solid                                      │
+│       short break      #1DE9B6    solid                                      │
+│       long break       #9C27FF    solid                                      │
+│    ↓ more                                                                    │
+│              ready                                                           │
+│              #00C853 · solid · 100%                                          │
+│  shown for ready_hold after Claude finishes                                  │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  ↑/↓ move • enter edit • e effect/cycle • s save • ? help • q quit           │
+╰──────────────────────────────────────────────────────────────────────────────╯

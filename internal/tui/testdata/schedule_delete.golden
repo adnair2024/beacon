@@ -1,0 +1,24 @@
+╭──────────────────────────────────────────────────────────────────────────────╮
+│  beacon · engine                                  ● desk  FAKE-STRIP  cloud  │
+│   1 Dashboard   2 Pomo  [3 Schedule]  4 Devices   5 Log   6 Colors           │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│  workday · enabled · system time zone                                        │
+│   Mon  Tue  Wed  Thu  Fri  ···  ···                                          │
+│  built-in default; the first change creates schedules/workday.json           │
+│                                                                              │
+│       07:55 Arrive        2900K 60%                                          │
+│       09:30 Focus         4800K 90%     ● now                                │
+│  ▸    11:00 Lunch         amber 25%                                          │
+│       12:00 Back to work  4800K 90%                                          │
+│       14:30 Wind down     3000K 70%                                          │
+│       16:15 Leave         off                                                │
+│                                                                              │
+│  Delete 11:00 "Lunch"? y/n                                                   │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│                                                                              │
+│  ──────────────────────────────────────────────────────────────────────────  │
+│                                                                              │
+│  y yes, delete • esc cancel                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯

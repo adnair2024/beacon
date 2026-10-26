@@ -1,0 +1,265 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": [
+    {
+      "sku": "TEST-NOSEG",
+      "device": "XX:XX:XX:XX:XX:XX:XX:02",
+      "deviceName": "Plain RGB",
+      "type": "devices.types.light",
+      "capabilities": [
+        {
+          "type": "devices.capabilities.on_off",
+          "instance": "powerSwitch",
+          "parameters": {
+            "dataType": "ENUM",
+            "options": [
+              {
+                "name": "on",
+                "value": 1
+              },
+              {
+                "name": "off",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "devices.capabilities.range",
+          "instance": "brightness",
+          "parameters": {
+            "dataType": "INTEGER",
+            "unit": "unit.percent",
+            "range": {
+              "min": 1,
+              "max": 100,
+              "precision": 1
+            }
+          }
+        },
+        {
+          "type": "devices.capabilities.color_setting",
+          "instance": "colorRgb",
+          "parameters": {
+            "dataType": "INTEGER",
+            "range": {
+              "min": 0,
+              "max": 16777215,
+              "precision": 1
+            }
+          }
+        },
+        {
+          "type": "devices.capabilities.color_setting",
+          "instance": "colorTemperatureK",
+          "parameters": {
+            "dataType": "INTEGER",
+            "range": {
+              "min": 2200,
+              "max": 6500,
+              "precision": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sku": "TEST-NOKELVIN",
+      "device": "XX:XX:XX:XX:XX:XX:XX:03",
+      "deviceName": "RGB only",
+      "type": "devices.types.light",
+      "capabilities": [
+        {
+          "type": "devices.capabilities.on_off",
+          "instance": "powerSwitch",
+          "parameters": {
+            "dataType": "ENUM",
+            "options": [
+              {
+                "name": "on",
+                "value": 1
+              },
+              {
+                "name": "off",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "devices.capabilities.range",
+          "instance": "brightness",
+          "parameters": {
+            "dataType": "INTEGER",
+            "unit": "unit.percent",
+            "range": {
+              "min": 1,
+              "max": 100,
+              "precision": 1
+            }
+          }
+        },
+        {
+          "type": "devices.capabilities.color_setting",
+          "instance": "colorRgb",
+          "parameters": {
+            "dataType": "INTEGER",
+            "range": {
+              "min": 0,
+              "max": 16777215,
+              "precision": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sku": "TEST-WHITE",
+      "device": "XX:XX:XX:XX:XX:XX:XX:04",
+      "deviceName": "White only",
+      "type": "devices.types.light",
+      "capabilities": [
+        {
+          "type": "devices.capabilities.on_off",
+          "instance": "powerSwitch",
+          "parameters": {
+            "dataType": "ENUM",
+            "options": [
+              {
+                "name": "on",
+                "value": 1
+              },
+              {
+                "name": "off",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "devices.capabilities.range",
+          "instance": "brightness",
+          "parameters": {
+            "dataType": "INTEGER",
+            "range": {
+              "min": 5,
+              "max": 100,
+              "precision": 1
+            }
+          }
+        },
+        {
+          "type": "devices.capabilities.color_setting",
+          "instance": "colorTemperatureK",
+          "parameters": {
+            "dataType": "INTEGER",
+            "range": {
+              "min": 2700,
+              "max": 6500,
+              "precision": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sku": "TEST-BADSEG",
+      "device": "XX:XX:XX:XX:XX:XX:XX:05",
+      "deviceName": "Bad segments",
+      "type": "devices.types.light",
+      "capabilities": [
+        {
+          "type": "devices.capabilities.on_off",
+          "instance": "powerSwitch",
+          "parameters": {
+            "dataType": "ENUM",
+            "options": [
+              {
+                "name": "on",
+                "value": 1
+              },
+              {
+                "name": "off",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "devices.capabilities.color_setting",
+          "instance": "colorRgb",
+          "parameters": {
+            "dataType": "INTEGER",
+            "range": {
+              "min": 0,
+              "max": 16777215,
+              "precision": 1
+            }
+          }
+        },
+        {
+          "type": "devices.capabilities.segment_color_setting",
+          "instance": "segmentedColorRgb",
+          "parameters": {
+            "dataType": "STRUCT",
+            "fields": [
+              {
+                "fieldName": "rgb",
+                "dataType": "INTEGER"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sku": "TEST-UNKNOWN",
+      "device": "XX:XX:XX:XX:XX:XX:XX:06",
+      "deviceName": "Only unknown",
+      "type": "devices.types.other",
+      "capabilities": [
+        {
+          "type": "devices.capabilities.toggle",
+          "instance": "gradientToggle",
+          "parameters": {
+            "dataType": "ENUM",
+            "options": [
+              {
+                "name": "on",
+                "value": 1
+              },
+              {
+                "name": "off",
+                "value": 0
+              }
+            ]
+          }
+        },
+        {
+          "type": "devices.capabilities.dynamic_scene",
+          "instance": "lightScene",
+          "parameters": {
+            "dataType": "ENUM",
+            "options": []
+          }
+        },
+        {
+          "type": "devices.capabilities.music_setting",
+          "instance": "musicMode",
+          "parameters": {
+            "dataType": "STRUCT",
+            "fields": []
+          }
+        },
+        {
+          "type": "devices.capabilities.some_future_type",
+          "instance": "futureInstance",
+          "parameters": {
+            "dataType": "WEIRD"
+          }
+        }
+      ]
+    }
+  ]
+}
